@@ -12,7 +12,7 @@
         <!--Table View Controller-->
         <scene sceneID="7D4-qs-mQ1">
             <objects>
-                <tableViewController id="p6E-o8-6A2" sceneMemberID="viewController">
+                <tableViewController id="p6E-o8-6A2" customClass="TableViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="tH2-ed-x3e">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -28,7 +28,13 @@
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                             <state key="normal" title="Add Task"/>
+                                            <connections>
+                                                <action selector="btnAddTaskClicked:" destination="p6E-o8-6A2" eventType="touchUpInside" id="OHE-G5-AFk"/>
+                                            </connections>
                                         </button>
+                                        <connections>
+                                            <action selector="btnAddTaskClicked:" destination="p6E-o8-6A2" id="DsT-kf-Nsa"/>
+                                        </connections>
                                     </barButtonItem>
                                 </navigationItem>
                             </items>
