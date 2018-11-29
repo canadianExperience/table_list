@@ -8,13 +8,35 @@
 
 import UIKit
 
+// Sample data structure for Task
+struct CellData{
+    let taskID: String;
+    let taskName: String;
+}
+
 class TableViewController: UITableViewController
 
-
 {
+    
+    @IBOutlet weak var tabView: UITableView!
+    
+    //Data array for TableView
+    var data = [CellData]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        //8
+        tabView.delegate = self
+        tabView.dataSource = self
+        
+        data =
+            [
+            CellData.init(taskID: "1", taskName: "Task_1"),
+            CellData.init(taskID: "2", taskName: "Task_2"),
+            CellData.init(taskID: "3", taskName: "Task_3"),
+            CellData.init(taskID: "4", taskName: "Task_4"),
+            CellData.init(taskID: "5", taskName: "Task_5")
+            ]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -25,25 +47,26 @@ class TableViewController: UITableViewController
 
     // MARK: - Table view data source
 
+    //9
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
-
+    //10
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return data.count
     }
 
-    /*
+    //11
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "custom") as! CustomCell
+        
+        cell.setCell(cellData: data[indexPath.row])
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

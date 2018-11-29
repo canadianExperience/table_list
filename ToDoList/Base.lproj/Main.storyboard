@@ -40,7 +40,7 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="custom" id="4W9-7Z-v7F">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="custom" id="4W9-7Z-v7F" customClass="CustomCell" customModule="ToDoList" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4W9-7Z-v7F" id="elV-gP-Qxp">
@@ -58,7 +58,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="70" id="W6S-3g-x55"/>
                                             </constraints>
-                                            <state key="normal" title="Detales"/>
+                                            <state key="normal" title="Details"/>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -71,6 +71,10 @@
                                         <constraint firstItem="j8C-Y6-pac" firstAttribute="leading" secondItem="elV-gP-Qxp" secondAttribute="leadingMargin" constant="5" id="swY-9k-lWD"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="btnDetails" destination="Anh-bJ-vd8" id="JcN-mw-aDF"/>
+                                    <outlet property="lblTaskName" destination="j8C-Y6-pac" id="bOF-4k-k4k"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -78,6 +82,9 @@
                             <outlet property="delegate" destination="p6E-o8-6A2" id="ROH-Wn-Pyu"/>
                         </connections>
                     </tableView>
+                    <connections>
+                        <outlet property="tabView" destination="tH2-ed-x3e" id="HUU-lz-iZc"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xy3-WC-iK0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
