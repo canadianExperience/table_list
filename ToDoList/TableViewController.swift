@@ -72,7 +72,9 @@ class TableViewController: UITableViewController, MyCustomCellDelegator
         let cell = tableView.dequeueReusableCell(withIdentifier: "custom") as! CustomCell
         
         cell.setCell(cellData: data[indexPath.row])
-
+        //25
+        cell.delegate = self
+        
         return cell
     }
     
@@ -81,14 +83,20 @@ class TableViewController: UITableViewController, MyCustomCellDelegator
         performSegue(withIdentifier: "toProgress", sender: cell)
     }
     
-    // Function to prepere segue
+    // Function to prepere segue for Progress and Details View Controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier! == "toProgress",
             let destination = segue.destination as? ProgressViewController,
             let index = tabView.indexPathForSelectedRow?.row{
             destination.taskNameIn = data[index].taskName
         }
-    }
+        if segue.identifier! == "toDetails",
+            let destination = segue.destination as? DetailsViewController{
+                let cell = sender as! CustomCell
+                destination.taskNameIn = cell.taskName
+            }
+        }
+ 
     
 
     /*

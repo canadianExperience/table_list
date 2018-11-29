@@ -89,6 +89,7 @@
                     <connections>
                         <outlet property="tabView" destination="tH2-ed-x3e" id="HUU-lz-iZc"/>
                         <segue destination="x90-m1-w3k" kind="show" identifier="toProgress" id="aKT-WH-2Yr"/>
+                        <segue destination="UTa-AW-Tj3" kind="show" identifier="toDetails" id="EzF-oQ-41I"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Xy3-WC-iK0" userLabel="First Responder" sceneMemberID="firstResponder"/>

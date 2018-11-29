@@ -27,6 +27,9 @@ class CustomCell: UITableViewCell
     }
     // 23 Action to move to Details View
     @IBAction func btnDetailsClicked(_ sender: UIButton) {
-        print("btnDetails  clicked")
+        //print("btnDetails  clicked")
+        if self.delegate != nil {
+            self.delegate.callSegueFromCell(cell: self)
+        }
     }
 }

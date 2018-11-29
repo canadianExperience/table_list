@@ -12,11 +12,12 @@ class DetailsViewController: UIViewController {
     
 
     @IBOutlet weak var lblTaskName: UILabel!
+    var taskNameIn: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        lblTaskName.text = taskNameIn
     }
     
 
