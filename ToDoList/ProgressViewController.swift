@@ -33,4 +33,10 @@ class ProgressViewController: UIViewController {
     }
     */
 
+    //Back button action (go back to Table View Controller)
+    @IBAction func btnBackClicked(_ sender: UIButton) {
+        //print("btnBack Clicked")
+        
+        self.dismiss(animated: true, completion: nil)
+    }
 }
