@@ -9,9 +9,15 @@
 import UIKit
 
 class ProgressViewController: UIViewController {
-
+    
+    var taskNameIn: String = ""
+//17
+    @IBOutlet weak var lblTaskName: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //17
+        lblTaskName.text = taskNameIn
 
         // Do any additional setup after loading the view.
     }
