@@ -67,6 +67,20 @@ class TableViewController: UITableViewController
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = tableView.cellForRow(at: indexPath)
+        performSegue(withIdentifier: "toProgress", sender: cell)
+    }
+    
+    // Function to prepere segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier! == "toProgress",
+            let destination = segue.destination as? ProgressViewController,
+            let index = tabView.indexPathForSelectedRow?.row{
+            destination.taskNameIn = data[index].taskName
+        }
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.
