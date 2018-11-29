@@ -11,7 +11,7 @@ import UIKit
 
 class CustomCell: UITableViewCell
 {
-    
+   //14
     @IBOutlet weak var lblTaskName: UILabel!
     @IBOutlet weak var btnDetails: UIButton!
     
