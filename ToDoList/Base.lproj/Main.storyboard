@@ -40,12 +40,36 @@
                             </items>
                         </navigationBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4W9-7Z-v7F">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="custom" id="4W9-7Z-v7F">
                                 <rect key="frame" x="0.0" y="72" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4W9-7Z-v7F" id="elV-gP-Qxp">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j8C-Y6-pac">
+                                            <rect key="frame" x="21" y="16" width="274" height="12"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Anh-bJ-vd8">
+                                            <rect key="frame" x="300" y="5" width="70" height="33.5"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="70" id="W6S-3g-x55"/>
+                                            </constraints>
+                                            <state key="normal" title="Detales"/>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="j8C-Y6-pac" secondAttribute="bottom" constant="5" id="9Px-7L-9G4"/>
+                                        <constraint firstItem="Anh-bJ-vd8" firstAttribute="top" secondItem="elV-gP-Qxp" secondAttribute="top" constant="5" id="Y0K-sg-LLJ"/>
+                                        <constraint firstItem="j8C-Y6-pac" firstAttribute="top" secondItem="elV-gP-Qxp" secondAttribute="topMargin" constant="5" id="dEd-eg-YmI"/>
+                                        <constraint firstAttribute="bottom" secondItem="Anh-bJ-vd8" secondAttribute="bottom" constant="5" id="gqx-iC-eEz"/>
+                                        <constraint firstAttribute="trailing" secondItem="Anh-bJ-vd8" secondAttribute="trailing" constant="5" id="p7i-dv-yia"/>
+                                        <constraint firstItem="Anh-bJ-vd8" firstAttribute="leading" secondItem="j8C-Y6-pac" secondAttribute="trailing" constant="5" id="sMU-hb-h8t"/>
+                                        <constraint firstItem="j8C-Y6-pac" firstAttribute="leading" secondItem="elV-gP-Qxp" secondAttribute="leadingMargin" constant="5" id="swY-9k-lWD"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                             </tableViewCell>
                         </prototypes>
