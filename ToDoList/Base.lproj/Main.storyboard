@@ -60,6 +60,9 @@
                                                 <constraint firstAttribute="width" constant="70" id="W6S-3g-x55"/>
                                             </constraints>
                                             <state key="normal" title="Details"/>
+                                            <connections>
+                                                <action selector="btnDetailsClicked:" destination="4W9-7Z-v7F" eventType="touchUpInside" id="HGc-TQ-Xyj"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>
@@ -106,7 +109,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeT-Qc-OYJ">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Progress Status" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NeT-Qc-OYJ">
                                 <rect key="frame" x="126" y="250" width="123" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>

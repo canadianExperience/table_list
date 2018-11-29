@@ -13,10 +13,19 @@ struct CellData{
     let taskID: String;
     let taskName: String;
 }
+// 21 Define protocol to call method located in TableViewController from cell
+protocol MyCustomCellDelegator {
+    func callSegueFromCell(cell: CustomCell)
+    
+}
 
-class TableViewController: UITableViewController
+class TableViewController: UITableViewController, MyCustomCellDelegator
 
 {
+    func callSegueFromCell(cell: CustomCell) {
+        self.performSegue(withIdentifier: "toDetails", sender: cell)
+    }
+    
     
     @IBOutlet weak var tabView: UITableView!
     
