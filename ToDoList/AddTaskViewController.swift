@@ -36,6 +36,14 @@ class AddTaskViewController: UIViewController {
         let taskNameText: String = taskName.text!
         let taskNotesText: String = taskNotes.text!
         //Save to db
+        var task = TaskObject()
+        
+        task.taskName = taskNameText
+        task.taskNotes = taskNotesText
+        task.taskProgress = 0
+        task.isComplete = false
+        
+        RealmDB.realmMgr.createOrUpdateItemDB(task)
         // Go to the previous view
 //        self.dismiss(animated: true, completion: nil)
         _ = navigationController?.popViewController(animated: true)

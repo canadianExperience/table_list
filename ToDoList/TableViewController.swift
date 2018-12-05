@@ -9,10 +9,10 @@
 import UIKit
 
 // Sample data structure for Task
-struct CellData{
-    let taskID: String;
-    let taskName: String;
-}
+//struct CellData{
+//    let taskID: String;
+//    let taskName: String;
+//}
 //// 21 Define protocol to call method located in TableViewController from cell
 //protocol MyCustomCellDelegator {
 //    func callSegueFromCell(cell: CustomCell)
@@ -33,28 +33,48 @@ class TableViewController: UITableViewController
     @IBOutlet weak var tabView: UITableView!
     
     //Data array for TableView
-    var data = [CellData]()
+    var data = [TaskObject]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        //8
-        tabView.delegate = self
-        tabView.dataSource = self
         
-        data =
-            [
-            CellData.init(taskID: "1", taskName: "Task_1"),
-            CellData.init(taskID: "2", taskName: "Task_2"),
-            CellData.init(taskID: "3", taskName: "Task_3"),
-            CellData.init(taskID: "4", taskName: "Task_4"),
-            CellData.init(taskID: "5", taskName: "Task_5")
-            ]
+        if RealmDB.realmMgr.readAllDataDB() != nil{
+            data = RealmDB.realmMgr.readAllDataDB()!
+        } else {
+            data = []
+        }
+        
+        tableView.reloadData()
+        
+    
+        //8
+//        tabView.delegate = self
+//        tabView.dataSource = self
+        
+        data = []
+//            [
+//            CellData.init(taskID: "1", taskName: "Task_1"),
+//            CellData.init(taskID: "2", taskName: "Task_2"),
+//            CellData.init(taskID: "3", taskName: "Task_3"),
+//            CellData.init(taskID: "4", taskName: "Task_4"),
+//            CellData.init(taskID: "5", taskName: "Task_5")
+//            ]
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if RealmDB.realmMgr.readAllDataDB() != nil{
+            data = RealmDB.realmMgr.readAllDataDB()!
+        } else {
+            data = []
+        }
+        tabView.reloadData()
     }
 
     // MARK: - Table view data source
@@ -94,13 +114,20 @@ class TableViewController: UITableViewController
         
         if segue.identifier == "toProgress"{
             let tableViewCell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: tableViewCell)
+            let index = tableView.indexPathForSelectedRow?.row
+            //let indexPath = tableView.indexPath(for: tableViewCell)!
             let destination = segue.destination as? ProgressViewController
+            let task:TaskObject = data[index!]
+            destination?.taskIn = task
            
         } else if segue.identifier == "toDetails"{
             let tableViewCell = sender as! UITableViewCell
-            let indexPath = tableView.indexPath(for: tableViewCell)
+            let index = tableView.inde.indexPathForSelectedRow?.row
+            //let indexPath = tableView.indexPath(for: tableViewCell)!
             let destination = segue.destination as? DetailsViewController
+            let task:TaskObject = data[index!]
+            destination?.taskIn = task
+        
         }
         else if segue.identifier == "toAddTask"{
             let destination = segue.destination as? AddTaskViewController

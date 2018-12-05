@@ -10,14 +10,17 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
-
-    @IBOutlet weak var lblTaskName: UILabel!
-    var taskNameIn: String = ""
+    @IBOutlet weak var taskName: UITextField!
+    
+    @IBOutlet weak var taskNotes: UITextView!
+   
+    var taskIn: TaskObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        lblTaskName.text = taskNameIn
+        taskName.text = taskIn?.taskName
+        taskNotes.text = taskIn?.taskNotes
     }
     
 
@@ -31,6 +34,22 @@ class DetailsViewController: UIViewController {
     }
     */
 
-    @IBAction func btnCancel(_ sender: UIButton) {
+    @IBAction func btnUpdateClicked(_ sender: UIButton) {
+        let tName = taskName.text!
+        let tNotes = taskNotes.text!
+        
+        let task = TaskObject()
+        task.taskName = tName
+        task.taskNotes = tNotes
+        task.taskProgress = (taskIn?.taskProgress)!
+        task.isComplete = (taskIn?.isComplete)!
+        
+        RealmDB.realmMgr.createOrUpdateItemDB(task)
+        // Go to the previous view
+        //        self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func btnDeleteClicked(_ sender: UIButton) {
     }
 }

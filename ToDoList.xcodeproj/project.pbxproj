@@ -16,9 +16,14 @@
 		C02D71FA21B05DA2002E0091 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71F921B05DA2002E0091 /* DetailsViewController.swift */; };
 		C02D71FC21B060F9002E0091 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71FB21B060F9002E0091 /* ProgressViewController.swift */; };
 		C05F22CB21B842E9007C29A3 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */; };
+		C05F22CF21B85AB8007C29A3 /* RealmDB.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F22CE21B85AB8007C29A3 /* RealmDB.swift */; };
+		C4CEB597963479524A3DE3CB /* Pods_ToDoList.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 586F407A77B94C0A474A9839 /* Pods_ToDoList.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3786CCE6E9138B10544AB524 /* Pods-ToDoList.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.release.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.release.xcconfig"; sourceTree = "<group>"; };
+		586F407A77B94C0A474A9839 /* Pods_ToDoList.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ToDoList.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C771B5A3A13C1342CC52BE5 /* Pods-ToDoList.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ToDoList.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList.debug.xcconfig"; sourceTree = "<group>"; };
 		C02D71E021B040EC002E0091 /* ToDoList.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ToDoList.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C02D71E321B040EC002E0091 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C02D71E821B040EC002E0091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -30,6 +35,7 @@
 		C02D71F921B05DA2002E0091 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C02D71FB21B060F9002E0091 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
+		C05F22CE21B85AB8007C29A3 /* RealmDB.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmDB.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,17 +43,37 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C4CEB597963479524A3DE3CB /* Pods_ToDoList.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3E1F1DFE90F3474B7FDFFD09 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5C771B5A3A13C1342CC52BE5 /* Pods-ToDoList.debug.xcconfig */,
+				3786CCE6E9138B10544AB524 /* Pods-ToDoList.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		BE3C739E8722DAA817AAED98 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				586F407A77B94C0A474A9839 /* Pods_ToDoList.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		C02D71D721B040EC002E0091 = {
 			isa = PBXGroup;
 			children = (
 				C02D71E221B040EC002E0091 /* ToDoList */,
 				C02D71E121B040EC002E0091 /* Products */,
+				3E1F1DFE90F3474B7FDFFD09 /* Pods */,
+				BE3C739E8722DAA817AAED98 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -62,6 +88,7 @@
 		C02D71E221B040EC002E0091 /* ToDoList */ = {
 			isa = PBXGroup;
 			children = (
+				C05F22CE21B85AB8007C29A3 /* RealmDB.swift */,
 				C02D71F521B04BD6002E0091 /* TableViewController.swift */,
 				C02D71F921B05DA2002E0091 /* DetailsViewController.swift */,
 				C02D71FB21B060F9002E0091 /* ProgressViewController.swift */,
@@ -83,9 +110,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C02D71F221B040ED002E0091 /* Build configuration list for PBXNativeTarget "ToDoList" */;
 			buildPhases = (
+				40CC168A8F705A274D47C07A /* [CP] Check Pods Manifest.lock */,
 				C02D71DC21B040EC002E0091 /* Sources */,
 				C02D71DD21B040EC002E0091 /* Frameworks */,
 				C02D71DE21B040EC002E0091 /* Resources */,
+				34DF5ECD52FBF9D333973E29 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -142,6 +171,55 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		34DF5ECD52FBF9D333973E29 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ToDoList/Pods-ToDoList-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		40CC168A8F705A274D47C07A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ToDoList-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		C02D71DC21B040EC002E0091 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -150,6 +228,7 @@
 				C02D71FC21B060F9002E0091 /* ProgressViewController.swift in Sources */,
 				C05F22CB21B842E9007C29A3 /* AddTaskViewController.swift in Sources */,
 				C02D71E421B040EC002E0091 /* AppDelegate.swift in Sources */,
+				C05F22CF21B85AB8007C29A3 /* RealmDB.swift in Sources */,
 				C02D71F821B056C0002E0091 /* CustomCell.swift in Sources */,
 				C02D71F621B04BD6002E0091 /* TableViewController.swift in Sources */,
 				C02D71FA21B05DA2002E0091 /* DetailsViewController.swift in Sources */,
@@ -296,6 +375,7 @@
 		};
 		C02D71F321B040ED002E0091 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5C771B5A3A13C1342CC52BE5 /* Pods-ToDoList.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -314,6 +394,7 @@
 		};
 		C02D71F421B040ED002E0091 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3786CCE6E9138B10544AB524 /* Pods-ToDoList.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
