@@ -13,18 +13,21 @@ struct CellData{
     let taskID: String;
     let taskName: String;
 }
-// 21 Define protocol to call method located in TableViewController from cell
-protocol MyCustomCellDelegator {
-    func callSegueFromCell(cell: CustomCell)
-    
-}
+//// 21 Define protocol to call method located in TableViewController from cell
+//protocol MyCustomCellDelegator {
+//    func callSegueFromCell(cell: CustomCell)
+//
+//}
 
-class TableViewController: UITableViewController, MyCustomCellDelegator
+class TableViewController: UITableViewController
+//    , MyCustomCellDelegator
 
 {
-    func callSegueFromCell(cell: CustomCell) {
-        self.performSegue(withIdentifier: "toDetails", sender: cell)
-    }
+    
+    private static let cellIdentifier = "custom"
+//    func callSegueFromCell(cell: CustomCell) {
+//        self.performSegue(withIdentifier: "toDetails", sender: cell)
+//    }
     
     
     @IBOutlet weak var tabView: UITableView!
@@ -69,33 +72,34 @@ class TableViewController: UITableViewController, MyCustomCellDelegator
 
     //11
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "custom") as! CustomCell
+       // let cell = tableView.dequeueReusableCell(withIdentifier: "custom") as! CustomCell
         
-        cell.setCell(cellData: data[indexPath.row])
+        let cell = tableView.dequeueReusableCell(withIdentifier: TableViewController.cellIdentifier, for: indexPath)
+        cell.textLabel?.text = data[indexPath.row].taskName
+     //   cell.setCell(cellData: data[indexPath.row])
         //25
-        cell.delegate = self
+       // cell.delegate = self
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.cellForRow(at: indexPath)
-        performSegue(withIdentifier: "toProgress", sender: cell)
-    }
+//    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let cell = tableView.cellForRow(at: indexPath)
+//        performSegue(withIdentifier: "toProgress", sender: cell)
+//    }
     
     // Function to prepere segue for Progress and Details View Controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier! == "toProgress",
-            let destination = segue.destination as? ProgressViewController,
-            let index = tabView.indexPathForSelectedRow?.row{
-            destination.taskNameIn = data[index].taskName
+        let tableViewCell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: tableViewCell)
+        
+        if segue.identifier == "toProgress"{
+            let destination = segue.destination as? ProgressViewController
+           
+        } else if segue.identifier == "toDetails"{
+            let destination = segue.destination as? DetailsViewController
         }
-        if segue.identifier! == "toDetails",
-            let destination = segue.destination as? DetailsViewController{
-                let cell = sender as! CustomCell
-                destination.taskNameIn = cell.taskName
-            }
-        }
+    }
  
     
 
