@@ -15,6 +15,7 @@
 		C02D71F821B056C0002E0091 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71F721B056C0002E0091 /* CustomCell.swift */; };
 		C02D71FA21B05DA2002E0091 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71F921B05DA2002E0091 /* DetailsViewController.swift */; };
 		C02D71FC21B060F9002E0091 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71FB21B060F9002E0091 /* ProgressViewController.swift */; };
+		C05F22CB21B842E9007C29A3 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C02D71F721B056C0002E0091 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C02D71F921B05DA2002E0091 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C02D71FB21B060F9002E0091 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
+		C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -69,6 +71,7 @@
 				C02D71EA21B040ED002E0091 /* Assets.xcassets */,
 				C02D71EC21B040ED002E0091 /* LaunchScreen.storyboard */,
 				C02D71EF21B040ED002E0091 /* Info.plist */,
+				C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -145,6 +148,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C02D71FC21B060F9002E0091 /* ProgressViewController.swift in Sources */,
+				C05F22CB21B842E9007C29A3 /* AddTaskViewController.swift in Sources */,
 				C02D71E421B040EC002E0091 /* AppDelegate.swift in Sources */,
 				C02D71F821B056C0002E0091 /* CustomCell.swift in Sources */,
 				C02D71F621B04BD6002E0091 /* TableViewController.swift in Sources */,

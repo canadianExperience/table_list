@@ -90,14 +90,20 @@ class TableViewController: UITableViewController
     
     // Function to prepere segue for Progress and Details View Controllers
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let tableViewCell = sender as! UITableViewCell
-        let indexPath = tableView.indexPath(for: tableViewCell)
+        
         
         if segue.identifier == "toProgress"{
+            let tableViewCell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: tableViewCell)
             let destination = segue.destination as? ProgressViewController
            
         } else if segue.identifier == "toDetails"{
+            let tableViewCell = sender as! UITableViewCell
+            let indexPath = tableView.indexPath(for: tableViewCell)
             let destination = segue.destination as? DetailsViewController
+        }
+        else if segue.identifier == "toAddTask"{
+            let destination = segue.destination as? AddTaskViewController
         }
     }
  
@@ -150,6 +156,7 @@ class TableViewController: UITableViewController
 
     @IBAction func btnAddTaskClicked(_ sender: UIButton) {
         print("Add Task Clicked")
+        performSegue(withIdentifier: "toAddTask", sender: self)
     }
     
 }

@@ -81,6 +81,7 @@
                             </button>
                             <connections>
                                 <action selector="btnAddTaskClicked:" destination="p6E-o8-6A2" id="T8c-dJ-fSI"/>
+                                <segue destination="JEw-xv-pLE" kind="show" identifier="toAddTask" id="yLn-DJ-p6B"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -188,6 +189,21 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iO4-eb-80H" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="764" y="688"/>
+        </scene>
+        <!--Add Task View Controller-->
+        <scene sceneID="Z5f-kp-fB9">
+            <objects>
+                <viewController id="JEw-xv-pLE" customClass="AddTaskViewController" customModule="ToDoList" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Sqs-kB-4HT">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="p59-n7-wja"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="EDr-c3-WML" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1751" y="388"/>
         </scene>
     </scenes>
 </document>
