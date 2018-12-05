@@ -10,10 +10,14 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
 
+    @IBOutlet weak var taskName: UITextField!
+    
+    @IBOutlet weak var taskNotes: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+
     }
     
 
@@ -27,4 +31,13 @@ class AddTaskViewController: UIViewController {
     }
     */
 
+    @IBAction func btnSaveTask(_ sender: UIButton) {
+        
+        let taskNameText: String = taskName.text!
+        let taskNotesText: String = taskNotes.text!
+        //Save to db
+        // Go to the previous view
+//        self.dismiss(animated: true, completion: nil)
+        _ = navigationController?.popViewController(animated: true)
+    }
 }
