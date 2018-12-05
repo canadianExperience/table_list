@@ -69,7 +69,21 @@
                             <outlet property="delegate" destination="p6E-o8-6A2" id="ROH-Wn-Pyu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="1bW-Ey-a1c"/>
+                    <navigationItem key="navigationItem" id="1bW-Ey-a1c">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="D6O-Ql-NVf">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="gx1-HV-FUZ">
+                                <rect key="frame" x="276" y="7" width="83" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Add task"/>
+                                <connections>
+                                    <action selector="btnAddTaskClicked:" destination="p6E-o8-6A2" eventType="touchUpInside" id="tCA-Me-wUI"/>
+                                </connections>
+                            </button>
+                            <connections>
+                                <action selector="btnAddTaskClicked:" destination="p6E-o8-6A2" id="T8c-dJ-fSI"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tabView" destination="tH2-ed-x3e" id="HUU-lz-iZc"/>
                     </connections>

@@ -28,7 +28,7 @@ class TableViewController: UITableViewController
 //    func callSegueFromCell(cell: CustomCell) {
 //        self.performSegue(withIdentifier: "toDetails", sender: cell)
 //    }
-    
+
     
     @IBOutlet weak var tabView: UITableView!
     
