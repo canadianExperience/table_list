@@ -22,13 +22,13 @@ class TaskObject : Object {
     }
     
     //Setter
-    func setTaskObject(itemID: String, taskName: String, taskNotes: String, taskProgress: Int, isComplite: Bool) {
+    func setTaskObject(itemID: String, taskName: String, taskNotes: String, taskProgress: Int, isComplete: Bool) {
 
         self.itemID = itemID
         self.taskName = taskName
         self.taskNotes = taskNotes
         self.taskProgress = taskProgress
-        self.isComplete = isComplite
+        self.isComplete = isComplete
     }
     
     //Setter

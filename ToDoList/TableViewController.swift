@@ -69,7 +69,7 @@ class TableViewController: UITableViewController
         // Set text for table cell
         cell.textLabel?.text = data[indexPath.row].taskName
         
-        //  Grey out cell based on complition status
+        //  Grey out cell based on completion status
         if data[indexPath.row].isComplete {
             cell.backgroundColor = UIColor.gray
         } else {

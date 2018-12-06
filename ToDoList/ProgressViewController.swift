@@ -44,7 +44,7 @@ class ProgressViewController: UIViewController {
         let task = TaskObject()
         
         //Populate Task Object
-        task.setTaskObject(itemID: (taskIn?.itemID)!, taskName: (taskIn?.taskName)!, taskNotes: (taskIn?.taskNotes)!, taskProgress: progress, isComplite: isComplete)
+        task.setTaskObject(itemID: (taskIn?.itemID)!, taskName: (taskIn?.taskName)!, taskNotes: (taskIn?.taskNotes)!, taskProgress: progress, isComplete: isComplete)
     
         // Set Task progress in %
         lblProgress.text = String(Int(slider.value)) + " %"

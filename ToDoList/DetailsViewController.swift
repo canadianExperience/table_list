@@ -32,11 +32,7 @@ class DetailsViewController: UIViewController {
     @IBAction func btnUpdateClicked(_ sender: UIButton) {
         // Create new task object and populate
         let task = TaskObject()
-        task.itemID = (taskIn?.itemID)!
-        task.taskName = taskName.text!
-        task.taskNotes = taskNotes.text!
-        task.taskProgress = (taskIn?.taskProgress)!
-        task.isComplete = (taskIn?.isComplete)!
+        task.setTaskObject(itemID:(taskIn?.itemID)!,taskName: taskName.text!, taskNotes: taskNotes.text!, taskProgress: (taskIn?.taskProgress)!, isComplete: (taskIn?.isComplete)!)
         
         //Perform DB update or create operation
         RealmDB.realmMgr.createOrUpdateItemDB(task)
