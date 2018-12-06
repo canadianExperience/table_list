@@ -1,8 +1,9 @@
 //
 //  AddTaskViewController.swift
+//  Created by Elena Melnikova on 2018-12-04.
 //  ToDoList
-//
-//  Created by Elena Melnikova on 2018-12-05.
+//  Student ID: 301025880
+//  Description: AddTaskViewController to add new task.
 //  Copyright © 2018 Centennial College. All rights reserved.
 //
 
@@ -10,42 +11,27 @@ import UIKit
 
 class AddTaskViewController: UIViewController {
 
+    //Outlets for Task name and Task notes
     @IBOutlet weak var taskName: UITextField!
-    
     @IBOutlet weak var taskNotes: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    // Action for "Save" button clicked
     @IBAction func btnSaveTask(_ sender: UIButton) {
+
+        //Create new Task Object
+        let task = TaskObject()
         
-        let taskNameText: String = taskName.text!
-        let taskNotesText: String = taskNotes.text!
-        //Save to db
-        var task = TaskObject()
+        //Populate task
+        task.setTaskObject(name: taskName.text!, notes: taskNotes.text!)
         
-        task.taskName = taskNameText
-        task.taskNotes = taskNotesText
-        task.taskProgress = 0
-        task.isComplete = false
-        
+        //Call DB create operation
         RealmDB.realmMgr.createOrUpdateItemDB(task)
-        // Go to the previous view
-//        self.dismiss(animated: true, completion: nil)
+
+        //Return to main view
         _ = navigationController?.popViewController(animated: true)
     }
 }

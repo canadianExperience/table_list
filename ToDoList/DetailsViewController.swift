@@ -1,8 +1,9 @@
 //
 //  DetailsViewController.swift
+//  Created by Elena Melnikova on 2018-12-04.
 //  ToDoList
-//
-//  Created by Elena Melnikova on 2018-11-29.
+//  Student ID: 301025880
+//  Description: DetailsViewController to display, update task data and delete task.
 //  Copyright © 2018 Centennial College. All rights reserved.
 //
 
@@ -10,46 +11,49 @@ import UIKit
 
 class DetailsViewController: UIViewController {
     
+    // Outlets for Task name and Task notes
     @IBOutlet weak var taskName: UITextField!
-    
     @IBOutlet weak var taskNotes: UITextView!
    
+    //Input task
     var taskIn: TaskObject? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        //Set Task name from input task
         taskName.text = taskIn?.taskName
+        
+        //Set Task notes from input task
         taskNotes.text = taskIn?.taskNotes
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    // Update button action
     @IBAction func btnUpdateClicked(_ sender: UIButton) {
-        let tName = taskName.text!
-        let tNotes = taskNotes.text!
-        
+        // Create new task object and populate
         let task = TaskObject()
-        task.taskName = tName
-        task.taskNotes = tNotes
+        task.itemID = (taskIn?.itemID)!
+        task.taskName = taskName.text!
+        task.taskNotes = taskNotes.text!
         task.taskProgress = (taskIn?.taskProgress)!
         task.isComplete = (taskIn?.isComplete)!
         
+        //Perform DB update or create operation
         RealmDB.realmMgr.createOrUpdateItemDB(task)
-        // Go to the previous view
-        //        self.dismiss(animated: true, completion: nil)
+        
+        //Return to main view
         _ = navigationController?.popViewController(animated: true)
     }
     
+    // Delete button action
     @IBAction func btnDeleteClicked(_ sender: UIButton) {
+        //Get item TD to delete element
+        let itemID = (taskIn?.itemID)!
+        
+        //Perform DB delete operation
+        RealmDB.realmMgr.deleteItemDB(itemID)
+       
+        //Return to main view
+        _ = navigationController?.popViewController(animated: true)
     }
 }

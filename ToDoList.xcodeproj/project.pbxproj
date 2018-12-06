@@ -12,7 +12,6 @@
 		C02D71EB21B040ED002E0091 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C02D71EA21B040ED002E0091 /* Assets.xcassets */; };
 		C02D71EE21B040ED002E0091 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C02D71EC21B040ED002E0091 /* LaunchScreen.storyboard */; };
 		C02D71F621B04BD6002E0091 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71F521B04BD6002E0091 /* TableViewController.swift */; };
-		C02D71F821B056C0002E0091 /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71F721B056C0002E0091 /* CustomCell.swift */; };
 		C02D71FA21B05DA2002E0091 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71F921B05DA2002E0091 /* DetailsViewController.swift */; };
 		C02D71FC21B060F9002E0091 /* ProgressViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02D71FB21B060F9002E0091 /* ProgressViewController.swift */; };
 		C05F22CB21B842E9007C29A3 /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */; };
@@ -31,7 +30,6 @@
 		C02D71ED21B040ED002E0091 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C02D71EF21B040ED002E0091 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C02D71F521B04BD6002E0091 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		C02D71F721B056C0002E0091 /* CustomCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		C02D71F921B05DA2002E0091 /* DetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
 		C02D71FB21B060F9002E0091 /* ProgressViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewController.swift; sourceTree = "<group>"; };
 		C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
@@ -92,13 +90,12 @@
 				C02D71F521B04BD6002E0091 /* TableViewController.swift */,
 				C02D71F921B05DA2002E0091 /* DetailsViewController.swift */,
 				C02D71FB21B060F9002E0091 /* ProgressViewController.swift */,
-				C02D71F721B056C0002E0091 /* CustomCell.swift */,
+				C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */,
 				C02D71E321B040EC002E0091 /* AppDelegate.swift */,
 				C02D71E721B040EC002E0091 /* Main.storyboard */,
 				C02D71EA21B040ED002E0091 /* Assets.xcassets */,
 				C02D71EC21B040ED002E0091 /* LaunchScreen.storyboard */,
 				C02D71EF21B040ED002E0091 /* Info.plist */,
-				C05F22CA21B842E9007C29A3 /* AddTaskViewController.swift */,
 			);
 			path = ToDoList;
 			sourceTree = "<group>";
@@ -229,7 +226,6 @@
 				C05F22CB21B842E9007C29A3 /* AddTaskViewController.swift in Sources */,
 				C02D71E421B040EC002E0091 /* AppDelegate.swift in Sources */,
 				C05F22CF21B85AB8007C29A3 /* RealmDB.swift in Sources */,
-				C02D71F821B056C0002E0091 /* CustomCell.swift in Sources */,
 				C02D71F621B04BD6002E0091 /* TableViewController.swift in Sources */,
 				C02D71FA21B05DA2002E0091 /* DetailsViewController.swift in Sources */,
 			);

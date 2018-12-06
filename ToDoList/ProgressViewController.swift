@@ -1,8 +1,9 @@
 //
 //  ProgressViewController.swift
+//  Created by Elena Melnikova on 2018-12-04.
 //  ToDoList
-//
-//  Created by Elena Melnikova on 2018-11-29.
+//  Student ID: 301025880
+//  Description: ProgressViewController to display and modify task progress.
 //  Copyright © 2018 Centennial College. All rights reserved.
 //
 
@@ -10,46 +11,45 @@ import UIKit
 
 class ProgressViewController: UIViewController {
     
+    // Outlets for Task Name, Slider and Progress (%)
     @IBOutlet weak var taskName: UILabel!
-    
+    @IBOutlet weak var lblProgress: UILabel!
     @IBOutlet weak var slider: UISlider!
     
+    // Input task
     var taskIn: TaskObject? = nil
-//17
-    @IBOutlet weak var lblTaskName: UILabel!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //17
-       // lblTaskName.text = taskNameIn
+    
+        // Set Task name, Slider position and progress
         taskName.text = taskIn?.taskName
         slider.value = Float((taskIn?.taskProgress)!)
-        
-        // Do any additional setup after loading the view.
+        lblProgress.text = String(Int(slider.value)) + " %"
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
-    
+    // Action for Slider position changed
     @IBAction func sliderAction(_ sender: UISlider) {
         
+        // Get slider progress position
         let progress = Int(slider.value)
+        
+        // Set completion status based on slider progress position
         var isComplete = false
         if progress == 100{
             isComplete = true
         }
-        var t = TaskObject()
-        t.setTaskObject(itemID: (taskIn?.itemID)!, taskName: (taskIn?.taskName)!, taskNotes: (taskIn?.taskNotes)!, taskProgress: progress, isComplite: isComplete)
-        //task.setTaskObject(name: <#T##String#>, notes: <#T##String#>)
-        RealmDB.realmMgr.createOrUpdateItemDB(t)
+        
+        // Create Task Object
+        let task = TaskObject()
+        
+        //Populate Task Object
+        task.setTaskObject(itemID: (taskIn?.itemID)!, taskName: (taskIn?.taskName)!, taskNotes: (taskIn?.taskNotes)!, taskProgress: progress, isComplite: isComplete)
+    
+        // Set Task progress in %
+        lblProgress.text = String(Int(slider.value)) + " %"
+        
+        //Call DB update operation
+        RealmDB.realmMgr.createOrUpdateItemDB(task)
     }
 }
